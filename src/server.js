@@ -32,7 +32,7 @@ app.post('/', function(req, res) {
 //process.env.ENABLE_METRICS
 
 app.get('/', function (req, res) {
-  console.log('Hello Mother Fucking Russia !');
+  res.send('Hello Mother Fucking Russia !');
 })
 
 // Synchronize models
