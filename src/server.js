@@ -29,11 +29,9 @@ app.post('/', function(req, res) {
     })
 })
 
-//process.env.ENABLE_METRICS
-
-app.get('/', function (req, res) {
+/*app.get('/', function (req, res) {
   res.send('Hello Mother Fucking Russia !');
-})
+})*/
 
 // Synchronize models
 models.sequelize.sync().then(function() {
