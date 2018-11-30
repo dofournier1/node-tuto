@@ -2,7 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const app = express()
-//const models = require('./models/index');
+const models = require('./models/index');
 
 // Decode json and x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -11,7 +11,7 @@ app.use(bodyParser.json())
 // Add a bit of logging
 app.use(morgan('short'))
 
-/*// Get all the users defined
+// Get all the users defined
 app.get('/', function (req, res) {
   models.User.findAll()
     .then((users) => {
@@ -27,7 +27,7 @@ app.post('/', function(req, res) {
     .then(() => {
       res.send('User added !')
     })
-})*/
+})
 
 //process.env.ENABLE_METRICS
 
@@ -36,7 +36,7 @@ app.get('/', function (req, res) {
 })
 
 // Synchronize models
-//models.sequelize.sync().then(function() {
+models.sequelize.sync().then(function() {
   /**
    * Listen on provided port, on all network interfaces.
    * 
@@ -45,4 +45,4 @@ app.get('/', function (req, res) {
   app.listen(process.env.PORT, function() {
     console.log('Express server listening on port 3000');
   });
-//});
+});
